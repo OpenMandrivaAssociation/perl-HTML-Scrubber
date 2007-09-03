@@ -1,24 +1,26 @@
-%define realname   HTML-Scrubber
+%define module  HTML-Scrubber
+%define name	perl-%{module}
+%define version 0.08
+%define release %mkrel 5
 
-Name:		perl-%{realname}
-Version:    0.08
-Release: %mkrel 4
+Name:		%{name}
+Version:	%{version}
+Release:	%{release}
 License:	GPL or Artistic
 Group:		Development/Perl
 Summary:    Perl extension for scrubbing/sanitizing html 
-Source0:    http://search.cpan.org/CPAN/authors/id/P/PO/PODMASTER/%{realname}-%{version}.tar.bz2
-Url:		http://search.cpan.org/dist/%{realname}
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires:	perl-devel
+Url:		http://search.cpan.org/dist/%{module}
+Source:     http://www.cpan.org/modules/by-module/HTML/%{module}-%{version}.tar.bz2
 BuildRequires:  perl-HTML-Parser
-BuildArch: noarch
+BuildArch:      noarch
+BuildRoot:	    %{_tmppath}/%{name}-%{version}
 
 %description
 If you wanna "scrub" or "sanitize" html input in a reliable and flexible 
 fashion, then this perl module is for you.
 
 %prep
-%setup -q -n %{realname}-%{version}
+%setup -q -n %{module}-%{version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -28,16 +30,14 @@ fashion, then this perl module is for you.
 make test
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 %makeinstall_std
-rm -rf $RPM_BUILD_ROOT/%{perl_vendorarch}
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
 %doc Changes README
-%{perl_vendorlib}/*
+%{perl_vendorlib}/HTML
 %{_mandir}/man3/*
-
