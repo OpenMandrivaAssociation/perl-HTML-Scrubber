@@ -13,6 +13,7 @@ Url:		http://search.cpan.org/dist/%{module}
 Source:     http://www.cpan.org/modules/by-module/HTML/%{module}-%{version}.tar.bz2
 BuildRequires:  perl-HTML-Parser
 BuildArch:      noarch
+BuildRoot:	    %{_tmppath}/%{name}-%{version}
 
 %description
 If you wanna "scrub" or "sanitize" html input in a reliable and flexible 
