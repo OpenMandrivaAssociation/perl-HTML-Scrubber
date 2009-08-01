@@ -1,26 +1,26 @@
-%define module  HTML-Scrubber
-%define name	perl-%{module}
-%define version 0.08
-%define release %mkrel 7
+%define upstream_name    HTML-Scrubber
+%define upstream_version 0.08
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
-License:	GPL or Artistic
-Group:		Development/Perl
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
 Summary:    Perl extension for scrubbing/sanitizing html 
-Url:		http://search.cpan.org/dist/%{module}
-Source:     http://www.cpan.org/modules/by-module/HTML/%{module}-%{version}.tar.bz2
+License:	GPL+ or Artistic
+Group:		Development/Perl
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://www.cpan.org/modules/by-module/HTML/%{upstream_name}-%{upstream_version}.tar.bz2
+
 BuildRequires:  perl-HTML-Parser
 BuildArch:      noarch
-BuildRoot:	    %{_tmppath}/%{name}-%{version}
+BuildRoot:	    %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 If you wanna "scrub" or "sanitize" html input in a reliable and flexible 
 fashion, then this perl module is for you.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
