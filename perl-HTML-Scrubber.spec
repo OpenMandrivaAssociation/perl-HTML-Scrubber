@@ -12,6 +12,7 @@ Url:		http://search.cpan.org/dist/%{upstream_name}
 Source0:	http://www.cpan.org/modules/by-module/HTML/HTML-Scrubber-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel
+BuildRequires: perl(Module::Build)
 BuildRequires:	perl(HTML::Parser)
 BuildArch:	noarch
 
