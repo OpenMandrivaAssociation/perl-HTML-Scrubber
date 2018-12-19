@@ -1,9 +1,9 @@
 %define upstream_name    HTML-Scrubber
-%define upstream_version 0.11
+%define upstream_version 0.15
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	3
+Release:	1
 
 Summary:	Perl extension for scrubbing/sanitizing html 
 License:	GPL+ or Artistic
@@ -11,9 +11,27 @@ Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
 Source0:	http://www.cpan.org/modules/by-module/HTML/HTML-Scrubber-%{upstream_version}.tar.gz
 
-BuildRequires:	perl-devel
-BuildRequires: perl(Module::Build)
-BuildRequires:	perl(HTML::Parser)
+BuildRequires:  perl-devel
+BuildRequires:  perl(Module::Build)
+BuildRequires:  perl(HTML::Parser)
+BuildRequires:  perl(CPAN::Meta::YAML) >= 0.16.0
+BuildRequires:  perl(Carp) >= 1.360.0
+BuildRequires:  perl(File::Spec)
+BuildRequires:  perl(File::Temp)
+BuildRequires:  perl(IO::Handle)
+BuildRequires:  perl(IPC::Open3)
+BuildRequires:  perl(Test)
+BuildRequires:  perl(Test::CPAN::Meta) >= 0.250.0
+BuildRequires:  perl(Test::EOL)
+BuildRequires:  perl(Test::Memory::Cycle)
+BuildRequires:  perl(Test::More) >= 1.1.9
+BuildRequires:  perl(Test::NoTabs)
+BuildRequires:  perl(utf8)
+BuildRequires:  perl(HTML::Entities)
+BuildRequires:  perl(HTML::Parser)
+BuildRequires:  perl(Scalar::Util)
+BuildRequires:  perl(strict)
+BuildRequires:  perl(warnings)
 BuildArch:	noarch
 
 %description
