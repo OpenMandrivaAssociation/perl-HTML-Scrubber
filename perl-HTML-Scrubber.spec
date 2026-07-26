@@ -1,15 +1,13 @@
 %define upstream_name    HTML-Scrubber
-%define upstream_version 0.19
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	1
+Version:	0.19
+Release:	2
 
 Summary:	Perl extension for scrubbing/sanitizing html 
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://github.com/nigelm/html-scrubber
-Source0:	https://cpan.metacpan.org/authors/id/N/NI/NIGELM/HTML-Scrubber-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/N/NI/NIGELM/HTML-Scrubber-%{version}.tar.gz
 
 BuildRequires:  perl-devel
 BuildRequires:  perl(Module::Build)
@@ -39,7 +37,7 @@ If you wanna "scrub" or "sanitize" html input in a reliable and flexible
 fashion, then this perl module is for you.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Build.PL installdirs=vendor
@@ -63,9 +61,7 @@ perl Build.PL installdirs=vendor
 
 * Sat Aug 01 2009 JÃ©rÃ´me Quelin <jquelin@mandriva.org> 0.80.0-1mdv2010.0
 + Revision: 406062
-- rebuild using %%perl_convert_version
-
-* Wed Jul 23 2008 Thierry Vignaud <tv@mandriva.org> 0.08-7mdv2009.0
+- rebuild using %0.19 Wed Jul 23 2008 Thierry Vignaud <tv@mandriva.org> 0.08-7mdv2009.0
 + Revision: 241477
 - rebuild
 - kill re-definition of %%buildroot on Pixel's request
