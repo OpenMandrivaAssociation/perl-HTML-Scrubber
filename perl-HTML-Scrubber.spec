@@ -1,13 +1,14 @@
 %define upstream_name    HTML-Scrubber
+%define upstream_version 0.19
 Name:		perl-%{upstream_name}
 Version:	0.19
-Release:	2
+Release:	1
 
 Summary:	Perl extension for scrubbing/sanitizing html 
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://github.com/nigelm/html-scrubber
-Source0:	https://cpan.metacpan.org/authors/id/N/NI/NIGELM/HTML-Scrubber-%{version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/N/NI/NIGELM/HTML-Scrubber-0.19.tar.gz
 
 BuildRequires:  perl-devel
 BuildRequires:  perl(Module::Build)
@@ -53,38 +54,4 @@ perl Build.PL installdirs=vendor
 %doc Changes README
 %{perl_vendorlib}/HTML
 %{_mandir}/man3/*
-
-%changelog
-* Mon Apr 04 2011 Guillaume Rousse <guillomovitch@mandriva.org> 0.90.0-1mdv2011.0
-+ Revision: 650310
-- update to new version 0.09
-
-* Sat Aug 01 2009 JÃ©rÃ´me Quelin <jquelin@mandriva.org> 0.80.0-1mdv2010.0
-+ Revision: 406062
-- rebuild using %0.19 Wed Jul 23 2008 Thierry Vignaud <tv@mandriva.org> 0.08-7mdv2009.0
-+ Revision: 241477
-- rebuild
-- kill re-definition of %%buildroot on Pixel's request
-
-  + Olivier Blin <oblin@mandriva.com>
-    - restore BuildRoot
-
-* Mon Sep 03 2007 Guillaume Rousse <guillomovitch@mandriva.org> 0.08-5mdv2008.0
-+ Revision: 78778
-- spec cleanup
-
-* Thu Jun 21 2007 Michael Scherer <misc@mandriva.org> 0.08-4mdv2008.0
-+ Revision: 41990
-- rebuild
-
-
-* Wed Dec 28 2005 Michael Scherer <misc@mandriva.org> 0.08-3mdk
-- Do not ship empty dir
-
-* Mon Oct 10 2005 Nicolas Lécureuil <neoclust@mandriva.org> 0.08-2mdk
-- Fix BuildRequires
-
-* Sat Oct 01 2005 Michael Scherer <misc@mandriva.org> 0.08-1mdk
-- First mandriva package
-
 
