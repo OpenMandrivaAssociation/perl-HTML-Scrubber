@@ -2,7 +2,7 @@
 %define upstream_version 0.19
 Name:		perl-%{upstream_name}
 Version:	0.19
-Release:	4
+Release:	5
 
 Summary:	Perl extension for scrubbing/sanitizing html 
 License:	GPL+ or Artistic
@@ -41,16 +41,16 @@ fashion, then this perl module is for you.
 %setup -q -n HTML-Scrubber-0.19
 
 %build
-perl Build.PL installdirs=vendor
-./Build
+perl Makefile.PL INSTALLDIRS=vendor
+%make_build
 
 %check
 # soft: do not fail package on test failures
 set +e
-#./Build test
+#make test || :
 
 %install
-./Build install destdir=%{buildroot}
+%make_install
 
 %files
 %doc Changes README
