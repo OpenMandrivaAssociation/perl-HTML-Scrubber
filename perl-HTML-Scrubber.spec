@@ -2,7 +2,7 @@
 %define upstream_version 0.19
 Name:		perl-%{upstream_name}
 Version:	0.19
-Release:	2
+Release:	3
 
 Summary:	Perl extension for scrubbing/sanitizing html 
 License:	GPL+ or Artistic
