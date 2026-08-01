@@ -2,13 +2,14 @@
 %define upstream_version 0.19
 Name:		perl-%{upstream_name}
 Version:	0.19
-Release:	5
+Release:	6
 
 Summary:	Perl extension for scrubbing/sanitizing html 
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://github.com/nigelm/html-scrubber
 Source0:	https://cpan.metacpan.org/authors/id/N/NI/NIGELM/HTML-Scrubber-0.19.tar.gz
+BuildRequires:	make
 
 BuildRequires:  perl-devel
 BuildRequires:  perl(Module::Build)
